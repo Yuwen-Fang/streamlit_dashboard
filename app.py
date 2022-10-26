@@ -66,11 +66,10 @@ def ss_get_data():
     df = pd.read_excel(file_name,
                        sheet_name,
                        skiprows=2,
-                       usecols="A,I,Y,AG,AK,AU,AV,AW,AX,BF,BG,BH,BI,BU,CF,CG,CQ,DT,EJ,EK,EQ,ES,FH,FI,FQ,FS,GA,GH")
+                       usecols="A,I,Y,AG,AK,AU,AV,AW,AX,BF,BG,BU,CF,CG,CQ,DT,EJ,EK,EQ,ES,FH,FI,FQ,FS,GA,GH")
     df.columns = ['日期','進流渠道','初沉池進','初沉池出','迴流液匯合池流量計',
                   '初沉污泥-1','初沉污泥-1(揮發性)','初沉污泥-2','初沉污泥-2(揮發性)',
-                  '深層階段曝氣槽-好氧','深層階段曝氣槽-缺氧','深層階段曝氣槽-好氧(揮發性)',
-                  '深層階段曝氣槽-缺氧(揮發性)','二沈池出水','迴流污泥','迴流污泥(揮發性)',
+                  '生物曝氣槽-好氧','生物曝氣槽-缺氧','二沈池出水','迴流污泥','迴流污泥(揮發性)',
                   '放流水','回收水','帶濾式濃縮機進流污泥','帶濾式濃縮機進流污泥(揮發性)',
                   '厭氧消化槽進流污泥','厭氧消化槽進流污泥(揮發性)','厭氧消化槽出流污泥',
                   '厭氧消化槽出流污泥(揮發性)','帶濾式脫水機進流污泥','帶濾式脫水機進流污泥(揮發性)',
@@ -592,8 +591,7 @@ right_column.plotly_chart(fig_COD_2, use_container_width=True)
 
 # ss [LINE CHART] ---------------------
 fig_ss_1 = px.line(df_ss, x='日期', y=['進流渠道','初沉池進','初沉池出',
-                                       '深層階段曝氣槽-好氧','深層階段曝氣槽-缺氧','深層階段曝氣槽-好氧(揮發性)',
-                                       '深層階段曝氣槽-缺氧(揮發性)','二沈池出水','放流水','回收水',],
+                                       '生物曝氣槽-好氧','生物曝氣槽-缺氧','二沈池出水','放流水','回收水',],
                    title="<b>懸浮固體ss</b>",template="plotly_white")
 fig_ss_1.update_layout(
     plot_bgcolor="rgba(0,0,0,0)",
@@ -619,8 +617,8 @@ left_column.plotly_chart(fig_ss_1, use_container_width=True)
 right_column.plotly_chart(fig_ss_2, use_container_width=True)
 
 
-# removal rate [SCATTER CHART] ---------------------
-fig_removal_rate_1 = px.scatter(df_removal_rate, x='日期', y=['全廠-BOD','全廠-COD','全廠-ss'],
+# removal rate [LINE CHART] ---------------------
+fig_removal_rate_1 = px.line(df_removal_rate, x='日期', y=['全廠-BOD','全廠-COD','全廠-ss'],
                    title="<b>去除率: 每日</b>",template="plotly_white")
 fig_removal_rate_1.update_layout(
     plot_bgcolor="rgba(0,0,0,0)",
@@ -628,7 +626,7 @@ fig_removal_rate_1.update_layout(
     yaxis=(dict(title="%"))
 )
 
-fig_removal_rate_2 = px.scatter(df_removal_rate, x='日期', y=['初沉池-BOD','初沉池-COD','初沉池-ss','全廠-氨氮',
+fig_removal_rate_2 = px.line(df_removal_rate, x='日期', y=['初沉池-BOD','初沉池-COD','初沉池-ss','全廠-氨氮',
                                                              '回收水-BOD','回收水-COD','回收水-ss'],
                    title="<b>去除率: 非每日</b>",template="plotly_white")
 fig_removal_rate_2.update_layout(
