@@ -8,7 +8,7 @@ Open in Streamlit License: MIT
 
 ## Run the app
 ```Python
-#vanilla terminal
+#Terminal
 streamlit run app.py
 
 #quit
