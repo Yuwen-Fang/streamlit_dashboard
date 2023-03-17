@@ -16,4 +16,6 @@ ctrl-c
 ```
 
 ## Demo 網站連結
-Sewage Treatment Plant Dashboard: `<` http://dillinger.io/ 
+Sewage Treatment Plant Dashboard: http://dillinger.io/ 
+
+## Screenshot
