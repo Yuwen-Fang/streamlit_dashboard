@@ -19,3 +19,4 @@ ctrl-c
 Sewage Treatment Plant Dashboard: https://yuwen-fang-streamlit-dashboard-app-q1ehl9.streamlit.app/ 
 
 ## Screenshot
+![image](https://github.com/Yuwen-Fang/streamlit_dashboard/blob/main/screenshot_stremlit.jpg?raw=true)
