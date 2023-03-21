@@ -30,3 +30,6 @@ Sewage Treatment Plant Dashboard: https://yuwen-fang-streamlit-dashboard-app-q1e
 
 ## Screenshot
 ![image](https://github.com/Yuwen-Fang/streamlit_dashboard/blob/main/screenshot_stremlit.jpg?raw=true)
+
+- - - -
+Have a good day. :bug:
